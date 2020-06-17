@@ -1,0 +1,15 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="dubbo-telnet-playground" owner="ffutop" />
+    <dubbo:registry address="multicast://224.0.0.1:33960" />
+    <dubbo:protocol id="protocol" name="dubbo" port="20880"/>
+    <dubbo:service interface="com.ffutop.playground.api.OverloadService" ref="overloadService" version="1"/>
+    <dubbo:service interface="com.ffutop.playground.api.ReferenceService" ref="referenceService" version="1"/>
+    <dubbo:service interface="com.ffutop.playground.api.PrimitiveService" ref="primitiveService" version="1"/>
+    <dubbo:service interface="com.ffutop.playground.api.CollectionService" ref="collectionService" version="1"/>
+    <dubbo:service interface="com.ffutop.playground.api.MultiParamsService" ref="multiParamsService" version="1"/>
+</beans>
